@@ -1,0 +1,37 @@
+/* ============================================================
+   BHAVYA STREETS CAFE — Additional Component Styles
+   ============================================================ */
+
+/* Particle canvas (hero) */
+#heroParticles canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Smooth image loading */
+img {
+  background: #1a1a1a;
+}
+img.loaded {
+  animation: imgFadeIn 0.5s ease;
+}
+@keyframes imgFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Focus rings for accessibility */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
