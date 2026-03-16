@@ -346,6 +346,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === popup) closeMenuPopup();
   });
 
+  // Gallery popup function
+  window.openGalleryPopup = function(imgSrc) {
+    popupImg.src = imgSrc;
+    popup.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    pdots.innerHTML = '';
+  };
+
   // Keyboard navigation for popup
   document.addEventListener('keydown', e => {
     if (!popup.classList.contains('open')) return;
